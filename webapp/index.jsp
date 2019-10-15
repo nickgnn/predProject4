@@ -14,15 +14,29 @@
 
    <h1>Welcome</h1>
 
-   <p><a href="/login.jsp">Login</a></p>
-
-
-   <form action="/users" method="get">
-       <input type="submit" value="Show Users">
+   <form action="/login" method="get">
+       <table>
+           <tbody>
+           <tr>
+               <td>Login:</td>
+               <td>
+                   <input type="text" name="user">
+               </td>
+           </tr>
+           <tr>
+               <td>Password:</td>
+               <td>
+                   <input type="password" name="pass">
+               </td>
+           </tr>
+           <tr>
+               <td colspan="2">
+                   <input type="submit" value="Enter">
+               </td>
+           </tr>
+           </tbody>
+       </table>
    </form>
-
-
-
 
 </body>
 </html>
