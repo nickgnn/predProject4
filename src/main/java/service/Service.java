@@ -14,6 +14,8 @@ public interface Service {
 
     void addUser(String name, int age) throws DBException;
 
+    void addUser(String name, int age, String password, String role) throws DBException;
+
     User getUserByName(String name) throws DBException;
 
     void updateUser(User user, String name) throws DBException;

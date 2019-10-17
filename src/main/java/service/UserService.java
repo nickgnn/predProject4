@@ -34,6 +34,15 @@ public class UserService implements Service {
     }
 
     @Override
+    public void addUser(String name, int age, String password, String role) throws DBException {
+        try {
+            factory.getTypeOfConnection().addUser(name, age, password, role);
+        } catch (SQLException e) {
+            throw new DBException(e);
+        }
+    }
+
+    @Override
     public List<User> getAllUsers() throws DBException {
         try {
             return factory.getTypeOfConnection().getAllUsers();

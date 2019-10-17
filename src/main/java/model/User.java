@@ -18,6 +18,9 @@ public class User {
     @Column(name = "age")
     private int age;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "role")
     private String role;
 
@@ -32,6 +35,13 @@ public class User {
         this.id = id;
         this.name = name;
         this.age = age;
+    }
+
+    public User(String name, int age, String password, String role) {
+        this.name = name;
+        this.age = age;
+        this.password = password;
+        this.role = role;
     }
 
     public long getId() {
@@ -64,6 +74,14 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

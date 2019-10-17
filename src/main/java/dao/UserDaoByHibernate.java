@@ -44,6 +44,20 @@ public class UserDaoByHibernate implements UserDao {
     }
 
     @Override
+    public void addUser(String name, int age, String password, String role) throws SQLException {
+        User user = getUserByName(name);
+
+        if (user == null) {
+            Transaction transaction = session.beginTransaction();
+            session.save(new User(name, age, password, role));
+            transaction.commit();
+            session.close();
+        } else {
+            System.out.println("This name already exists, choose another name:)");
+        }
+    }
+
+    @Override
     public List<User> getAllUsers() throws SQLException {
         Transaction transaction = session.beginTransaction();
 

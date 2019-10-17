@@ -76,6 +76,26 @@ public class UserDaoByJDBC implements UserDao {
     }
 
     @Override
+    public void addUser(String name, int age, String password, String role) throws SQLException {
+        User user = getUserByName(name);
+
+        if (user == null) {
+            String sql = "INSERT INTO `users` (`name`, `age`, `password`, `role`) VALUES (?, ?, ?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, name);
+            preparedStatement.setInt(2, age);
+            preparedStatement.setString(3, password);
+            preparedStatement.setString(4, role);
+
+            preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+        } else {
+            System.out.println("This name already exists, choose another name:)");
+        }
+    }
+
+    @Override
     public User getUserByName(String name) throws SQLException {
         String sql = "SELECT * FROM `users` WHERE (`name` = ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
