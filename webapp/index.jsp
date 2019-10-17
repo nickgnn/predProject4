@@ -14,7 +14,7 @@
 
    <h1>Welcome</h1>
 
-   <form action="/login" method="get">
+   <form action="/login" method="post">
        <table>
            <tbody>
            <tr>
