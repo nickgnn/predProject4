@@ -88,9 +88,36 @@ public class UserService implements Service {
     }
 
     @Override
+    public void updateUser(User user, String name, int age, String password) throws DBException {
+        try {
+            factory.getTypeOfConnection().updateUser(user, name, age, password);
+        } catch (SQLException e) {
+            throw new DBException(e);
+        }
+    }
+
+    @Override
+    public void updateUser(User user, String name, int age, String password, String role) throws DBException {
+        try {
+            factory.getTypeOfConnection().updateUser(user, name, age, password, role);
+        } catch (SQLException e) {
+            throw new DBException(e);
+        }
+    }
+
+    @Override
     public void updateUser(User user, Long id) throws DBException {
         try {
             factory.getTypeOfConnection().updateUser(user, id);
+        } catch (SQLException e) {
+            throw new DBException(e);
+        }
+    }
+
+    @Override
+    public boolean isExistsUser(String name) throws DBException {
+        try {
+            return factory.getTypeOfConnection().isExistsUser(name);
         } catch (SQLException e) {
             throw new DBException(e);
         }

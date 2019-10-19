@@ -18,7 +18,7 @@ public class DeleteUserServlet extends HttpServlet {
 
         Long id = Long.valueOf(req.getParameter("id"));
 
-        req.getRequestDispatcher("/users").forward(req, resp);
+        req.getRequestDispatcher("/admin").forward(req, resp);
 
         try {
             service.deleteUserById(id);

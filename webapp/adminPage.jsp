@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Users</title>
+    <title>Admin page</title>
 </head>
 
 <body>
@@ -19,12 +19,6 @@
 <form action="/add" method="get">
     <table>
                 <tbody>
-                <%--<tr>--%>
-                    <%--<td>ID:</td>--%>
-                    <%--<td>--%>
-                        <%--<input type="number" name="id">--%>
-                    <%--</td>--%>
-                <%--</tr>--%>
                 <tr>
                     <td>Name:</td>
                     <td>
@@ -38,6 +32,18 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="text" name="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Role:</td>
+                    <td>
+                        <input type="text" name="role">
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <input type="submit" value="Add User">
                     </td>
@@ -46,11 +52,15 @@
             </table>
 </form>
 
-<br><br>
+<br>
 
-<h1>Users</h1>
-<form action="/users" method="get">
-    <input type="submit" value="Refresh Users">
+<p><a href="/logout">LogOut</a></p>
+
+<br>
+
+<h1>List of users</h1>
+<form action="/admin" method="get">
+    <input type="submit" value="Refresh list">
 </form>
 
 
@@ -60,12 +70,13 @@
             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
-            <th>Edit User</th>
-            <th>Delete User</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Edit user</th>
+            <th>Delete user</th>
         </tr>
     </thead>
     <%
-        int i = 1;
         List<User> userList = (List<User>) request.getAttribute("usersList");
     %>
     <%
@@ -76,6 +87,8 @@
         <th><%=user.getId()%></th>
         <th><%=user.getName()%></th>
         <th><%=user.getAge()%></th>
+        <th><%=user.getPassword()%></th>
+        <th><%=user.getRole()%></th>
         <td><form action="/edit" method="get">
             <table>
                 <tbody>
@@ -86,7 +99,7 @@
                     <%--</td>--%>
                 <%--</tr>--%>
                 <tr>
-                    <td>Edit Name:</td>
+                    <td>Edit name:</td>
                     <td>
                         <input type="text" name="newName">
                     </td>
@@ -98,12 +111,24 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Edit password:</td>
+                    <td>
+                        <input type="text" name="newPassword">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Edit role:</td>
+                    <td>
+                        <input type="text" name="newRole">
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <%--<input type="hidden" name="id" value=<%=user.getId()%>>--%>
                         <input type="hidden" name="name" value=<%=user.getName()%>>
                         <input type="hidden" name="age" value=<%=user.getAge()%>>
 
-                        <input type="submit" value="Edit User">
+                        <input type="submit" value="Edit user">
                     </td>
                 </tr>
                 </tbody>
@@ -122,7 +147,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" value="Remove User">
+                            <input type="submit" value="Remove user">
                         </td>
                     </tr>
                     </tbody>

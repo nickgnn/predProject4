@@ -8,11 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>UserApp</title>
+    <title>Main page</title>
 </head>
 <body>
 
-   <h1>Welcome</h1>
+   <h1>Fill form below</h1>
 
    <form action="/login" method="post">
        <table>
@@ -20,7 +20,7 @@
            <tr>
                <td>Login:</td>
                <td>
-                   <input type="text" name="user">
+                   <input type="text" name="name">
                </td>
            </tr>
            <tr>

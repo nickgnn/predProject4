@@ -170,6 +170,34 @@ public class UserDaoByJDBC implements UserDao {
     }
 
     @Override
+    public int updateUser(User user, String name, int age, String password) throws SQLException {
+        String sql = "UPDATE `users` SET `password` = ? WHERE (`id` = ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, password);
+        preparedStatement.setLong(2, user.getId());
+
+        int rows = preparedStatement.executeUpdate();
+
+        preparedStatement.close();
+
+        return rows;
+    }
+
+    @Override
+    public int updateUser(User user, String name, int age, String password, String role) throws SQLException {
+        String sql = "UPDATE `users` SET `role` = ? WHERE (`id` = ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, role);
+        preparedStatement.setLong(2, user.getId());
+
+        int rows = preparedStatement.executeUpdate();
+
+        preparedStatement.close();
+
+        return rows;
+    }
+
+    @Override
     public long getUserIdByName(String name) throws SQLException {
         long id = 0;
         User user = getUserByName(name);
@@ -181,6 +209,15 @@ public class UserDaoByJDBC implements UserDao {
         }
 
         return id;
+    }
+
+    @Override
+    public boolean isExistsUser(String name) throws SQLException {
+        if (getUserByName(name) == null) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override

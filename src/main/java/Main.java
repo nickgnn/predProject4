@@ -1,9 +1,7 @@
-import dao.UserDaoFactory;
 import exception.DBException;
 import model.User;
 import service.Service;
 import service.UserService;
-import servlets.UsersServlet;
 
 public class Main {
 //    private static final SessionFactory ourSessionFactory;

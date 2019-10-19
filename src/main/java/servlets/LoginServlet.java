@@ -15,11 +15,6 @@ import java.io.IOException;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/login").forward(req, resp);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Service service = UserService.getInstance();
 
@@ -33,11 +28,13 @@ public class LoginServlet extends HttpServlet {
         }
 
         if (user.getRole().equals("user")) {
-
+//            req.setAttribute("userName", name);
+//            req.getRequestDispatcher("/user").forward(req, resp);
+            resp.sendRedirect("/user");
         }
 
         if (user.getRole().equals("admin")) {
-            req.getRequestDispatcher("/users").forward(req, resp);
+            resp.sendRedirect("/admin");
         }
     }
 }

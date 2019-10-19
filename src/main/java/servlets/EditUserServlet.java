@@ -18,38 +18,19 @@ public class EditUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Service service = UserService.getInstance();
 
-//        String newId = req.getParameter("newId");
         String newName = req.getParameter("newName");
         String newAge = req.getParameter("newAge");
+        String newPassword = req.getParameter("newPassword");
+        String newRole = req.getParameter("newRole");
 
-//        Long id = Long.valueOf(req.getParameter("id"));
         String name = req.getParameter("name");
-        int age = Integer.valueOf(req.getParameter("age"));
 
-//        System.out.println("----------------------");
-//
-////        System.out.println("newId is: " + newId);
-//
-//        System.out.println("newAge is: " + newAge);
-//        System.out.println("newName is: " + newName);
-//
-////        System.out.println("id is: " + id);
-//
-//        System.out.println("name is: " + name);
-//        System.out.println("age is: " + age);
-//        System.out.println("----------------------");
-
-        req.getRequestDispatcher("/users").forward(req, resp);
+        req.getRequestDispatcher("/admin").forward(req, resp);
 
         User user;
 
         try {
             user = service.getUserByName(name);
-
-//            System.out.println(user.getName() + " is NAME of user");
-//            System.out.println(user.getId() + " is ID of user");
-//            System.out.println(user.getAge() + " is AGE os user");
-
 
             if (!newName.equals("")) {
                 service.updateUser(user, newName);
@@ -59,9 +40,13 @@ public class EditUserServlet extends HttpServlet {
                 service.updateUser(user, Integer.valueOf(newAge));
             }
 
-//            if (!newId.equals("") | !newId.equals(id)) {
-//                service.updateUser(user, Long.valueOf(newId));
-//            }
+            if (!newPassword.equals("")) {
+                service.updateUser(user, user.getName(), user.getAge(), newPassword);
+            }
+
+            if (!newRole.equals("")) {
+                service.updateUser(user, user.getName(), user.getAge(), user.getPassword(), newRole);
+            }
         } catch (DBException e) {
                 e.getMessage();
             }

@@ -104,6 +104,15 @@ public class UserDaoByHibernate implements UserDao {
     }
 
     @Override
+    public boolean isExistsUser(String name) throws SQLException {
+        if (getUserByName(name) == null) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
     public int updateUser(User user, String name) throws SQLException {
         User userCheck = getUserByName(name);
         int rows = 0;
@@ -152,6 +161,40 @@ public class UserDaoByHibernate implements UserDao {
         String hql = "UPDATE User SET id = :newID where id = :userID";
         Query query = session.createQuery(hql);
         query.setParameter("newID", ID);
+        query.setParameter("userID", user.getId());
+
+        int res = query.executeUpdate();
+
+        transaction.commit();
+        session.close();
+
+        return res;
+    }
+
+    @Override
+    public int updateUser(User user, String name, int age, String password) throws SQLException {
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "UPDATE User SET password = :newPassword where id = :userID";
+        Query query = session.createQuery(hql);
+        query.setParameter("newPassword", password);
+        query.setParameter("userID", user.getId());
+
+        int res = query.executeUpdate();
+
+        transaction.commit();
+        session.close();
+
+        return res;
+    }
+
+    @Override
+    public int updateUser(User user, String name, int age, String password, String role) throws SQLException {
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "UPDATE User SET role = :newRole where id = :userID";
+        Query query = session.createQuery(hql);
+        query.setParameter("newRole", role);
         query.setParameter("userID", user.getId());
 
         int res = query.executeUpdate();

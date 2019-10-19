@@ -28,7 +28,7 @@ public class DBHelper {
         configuration.addAnnotatedClass(User.class);
 
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
-        configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+        configuration.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_example?serverTimezone=Europe/Moscow");
         configuration.setProperty("hibernate.connection.username", "root");
         configuration.setProperty("hibernate.connection.password", "1234");

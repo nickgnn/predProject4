@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/users")
-public class UsersServlet extends HttpServlet {
+@WebServlet("/admin")
+public class AdminPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Service service = UserService.getInstance();
@@ -22,9 +22,7 @@ public class UsersServlet extends HttpServlet {
         try {
             List<User> allUsers = service.getAllUsers();
             req.setAttribute("usersList", allUsers);
-            req.getRequestDispatcher("listOfUsers.jsp").forward(req, resp);
-
-//            allUsers.forEach(System.out::println);
+            req.getRequestDispatcher("adminPage.jsp").forward(req, resp);
         } catch (DBException e) {
             e.getMessage();
         }

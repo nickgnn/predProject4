@@ -22,7 +22,13 @@ public interface Service {
 
     void updateUser(User user, int age) throws DBException;
 
+    void updateUser(User user, String name, int age, String password) throws DBException;
+
+    void updateUser(User user, String name, int age, String password, String role) throws DBException;
+
     void updateUser(User user, Long id) throws DBException;
+
+    boolean isExistsUser(String name) throws DBException;
 
     void deleteUserByName(String name) throws DBException;
 

@@ -19,11 +19,13 @@ public class AddUserServlet extends HttpServlet {
 
         String name = req.getParameter("name");
         String age = req.getParameter("age");
+        String password = req.getParameter("password");
+        String role = req.getParameter("role");
 
-        req.getRequestDispatcher("/users").forward(req, resp);
+        req.getRequestDispatcher("/admin").forward(req, resp);
 
         try {
-            service.addUser(name, Integer.valueOf(age));
+            service.addUser(name, Integer.valueOf(age), password, role);
         } catch (DBException e) {
             e.getMessage();
         }
