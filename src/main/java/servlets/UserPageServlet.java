@@ -10,8 +10,12 @@ import java.io.IOException;
 @WebServlet("/user")
 public class UserPageServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("userPage.jsp").forward(req, resp);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
 
+        System.out.println(name);
+
+        req.getRequestDispatcher("userPage.jsp").forward(req, resp);
+//        resp.sendRedirect("userPage.jsp");
     }
 }

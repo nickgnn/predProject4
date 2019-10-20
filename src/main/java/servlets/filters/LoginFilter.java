@@ -31,9 +31,9 @@ public class LoginFilter implements Filter {
         String role = userByName.getRole();
 
         if (role.equals("user")) {
-//            req.setAttribute("userName", name);
-//            req.getRequestDispatcher("/user").forward(req, resp);
-            response.sendRedirect("/user");
+            req.setAttribute("userName", name);
+            req.getRequestDispatcher("/user").forward(req, resp);
+//            response.sendRedirect("/user");
         }
 
         if (role.equals("admin")) {

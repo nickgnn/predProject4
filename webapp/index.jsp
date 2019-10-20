@@ -20,7 +20,7 @@
            <tr>
                <td>Login:</td>
                <td>
-                   <input type="text" required placeholder="name" name="name" value="admin">
+                   <input type="text" required placeholder="name" name="name" value="nick">
                </td>
            </tr>
            <tr>
