@@ -16,7 +16,6 @@
       <%--String name = (String) request.getAttribute("userName");--%>
 <%--%>--%>
 
-
 <h1>Welcome, username! :)</h1>
 
 <%--<br>--%>

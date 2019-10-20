@@ -1,4 +1,4 @@
-package servlets;
+package servlets.CRUD;
 
 import exception.DBException;
 import model.User;

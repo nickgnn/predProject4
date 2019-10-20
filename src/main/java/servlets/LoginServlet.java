@@ -1,10 +1,5 @@
 package servlets;
 
-import exception.DBException;
-import model.User;
-import service.Service;
-import service.UserService;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,27 +9,10 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Service service = UserService.getInstance();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        response.sendRedirect("/admin");
+    }
 
-        String name = req.getParameter("name");
-        User user = null;
-
-        try {
-            user = service.getUserByName(name);
-        } catch (DBException e) {
-            e.getMessage();
-        }
-
-        if (user.getRole().equals("user")) {
-//            req.setAttribute("userName", name);
-//            req.getRequestDispatcher("/user").forward(req, resp);
-            resp.sendRedirect("/user");
-        }
-
-        if (user.getRole().equals("admin")) {
-            resp.sendRedirect("/admin");
-        }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }

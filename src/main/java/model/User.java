@@ -44,6 +44,14 @@ public class User {
         this.role = role;
     }
 
+    public User(long id, String name, int age, String password, String role) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.password = password;
+        this.role = role;
+    }
+
     public long getId() {
         return id;
     }
@@ -90,6 +98,8 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 

@@ -24,7 +24,6 @@ public class LogoutServlet extends HttpServlet {
         session.removeAttribute("role");
 
 
-
         resp.sendRedirect("logoutPage.jsp");
     }
 }

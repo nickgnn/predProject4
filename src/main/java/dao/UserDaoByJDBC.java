@@ -48,7 +48,9 @@ public class UserDaoByJDBC implements UserDao {
             list.add(new User(
                     resultSet.getLong("id"),
                     resultSet.getString("name"),
-                    resultSet.getInt("age")));
+                    resultSet.getInt("age"),
+                    resultSet.getString("password"),
+                    resultSet.getString("role")));
         }
 
         resultSet.close();
@@ -108,7 +110,9 @@ public class UserDaoByJDBC implements UserDao {
         if (resultSet.next()) {
             user = new User(resultSet.getLong("id"),
                     resultSet.getString("name"),
-                    resultSet.getInt("age"));
+                    resultSet.getInt("age"),
+                    resultSet.getString("password"),
+                    resultSet.getString("role"));
         } else {
             return null;
         }

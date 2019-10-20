@@ -20,18 +20,18 @@
            <tr>
                <td>Login:</td>
                <td>
-                   <input type="text" name="name">
+                   <input type="text" required placeholder="name" name="name" value="admin">
                </td>
            </tr>
            <tr>
                <td>Password:</td>
                <td>
-                   <input type="password" name="pass">
+                   <input type="password" required placeholder="pass" name="pass" value="1">
                </td>
            </tr>
            <tr>
                <td colspan="2">
-                   <input type="submit" value="Enter">
+                   <input type="submit" value="Enter" >
                </td>
            </tr>
            </tbody>
