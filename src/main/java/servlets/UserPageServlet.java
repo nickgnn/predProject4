@@ -1,5 +1,7 @@
 package servlets;
 
+import util.AuthManager;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,12 +12,11 @@ import java.io.IOException;
 @WebServlet("/user")
 public class UserPageServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        AuthManager authManager = AuthManager.getInstance();
+        String name = authManager.getName();
 
-        System.out.println(name);
-
+        req.setAttribute("name", name);
         req.getRequestDispatcher("userPage.jsp").forward(req, resp);
-//        resp.sendRedirect("userPage.jsp");
     }
 }

@@ -1,20 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: nick
-  Date: 19.10.2019
-  Time: 14:46
+  Date: 21.10.2019
+  Time: 22:55
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>LogOut</title>
+    <title>No permission</title>
 </head>
 <body>
 
-<h1>Buy-buy, <%=request.getAttribute("name")%> ! :)</h1>
-<br>
-<p><a href="/">Main</a></p>
+<p>${"Sorry! You do not have allow visit this page :("}</p>
+
+<p><a href="/user">Return to allowed page</a></p>
 
 </body>
 </html>

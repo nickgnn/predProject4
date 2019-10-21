@@ -1,20 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: nick
-  Date: 19.10.2019
-  Time: 14:46
+  Date: 21.10.2019
+  Time: 22:15
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>LogOut</title>
+    <title>User isn't Exists</title>
 </head>
 <body>
 
-<h1>Buy-buy, <%=request.getAttribute("name")%> ! :)</h1>
-<br>
-<p><a href="/">Main</a></p>
+<p>${"Wrong login or password, try again"}</p>
+
+<p><a href="/">Try again</a></p>
 
 </body>
 </html>

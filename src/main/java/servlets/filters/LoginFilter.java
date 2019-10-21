@@ -4,6 +4,7 @@ import exception.DBException;
 import model.User;
 import service.Service;
 import service.UserService;
+import util.AuthManager;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -15,28 +16,37 @@ import java.io.IOException;
 public class LoginFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         Service service = UserService.getInstance();
+        AuthManager authManager = AuthManager.getInstance();
+        User userByName;
+        String role = "";
 
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
         String name = request.getParameter("name");
-        User userByName = null;
+        String password = request.getParameter("pass");
+        authManager.setName(name);
+        authManager.setPassword(password);
 
         try {
-            userByName = service.getUserByName(name);
+            if (AuthManager.isLogin(name, password)) {
+                userByName = service.getUserByName(name);
+                role = userByName.getRole();
+            } else {
+                req.getRequestDispatcher("wrongLoginOrPassword.jsp").forward(req, resp);
+                return;
+            }
         } catch (DBException e) {
             e.getMessage();
         }
 
-        String role = userByName.getRole();
-
         if (role.equals("user")) {
-            req.setAttribute("userName", name);
-            req.getRequestDispatcher("/user").forward(req, resp);
-//            response.sendRedirect("/user");
+            authManager.setLogged(true);
+            response.sendRedirect("/user");
         }
 
         if (role.equals("admin")) {
+            authManager.setLogged(true);
             response.sendRedirect("/admin");
         }
 

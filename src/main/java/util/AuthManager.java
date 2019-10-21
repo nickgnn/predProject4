@@ -6,8 +6,51 @@ import org.apache.commons.lang3.StringUtils;
 import service.Service;
 import service.UserService;
 
+import java.io.IOException;
+
 public class AuthManager {
     private static Service service = UserService.getInstance();
+
+    private boolean isLogged;
+    private String name;
+    private String password;
+
+    private static AuthManager authManager;
+
+    public static AuthManager getInstance() {
+        if (authManager == null) {
+            authManager = new AuthManager();
+        }
+
+        return authManager;
+    }
+
+    private AuthManager() {
+    }
+
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+    public void setLogged(boolean logged) {
+        isLogged = logged;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public static boolean isLogin(String name, String password) throws DBException {
         if (StringUtils.isEmpty(name) || StringUtils.isEmpty(password)) {
@@ -22,4 +65,17 @@ public class AuthManager {
 
         return password.equals(user.getPassword());
     }
+
+    public void doLogIn() throws DBException, IOException {
+        if (StringUtils.isEmpty(name) || StringUtils.isEmpty(password)) {
+            isLogged = false;
+            return;
+        }
+
+        isLogged = isLogin(name, password);
+
+
+        System.out.println(isLogged);
+    }
+
 }

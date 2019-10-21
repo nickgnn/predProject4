@@ -20,13 +20,13 @@
            <tr>
                <td>Login:</td>
                <td>
-                   <input type="text" required placeholder="name" name="name" value="nick">
+                   <input type="text" required placeholder="name" name="name" >
                </td>
            </tr>
            <tr>
                <td>Password:</td>
                <td>
-                   <input type="password" required placeholder="pass" name="pass" value="1">
+                   <input type="password" required placeholder="password" name="pass" >
                </td>
            </tr>
            <tr>
