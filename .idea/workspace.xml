@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserPageServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserPageServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/UserPageServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="440">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminFilter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/AdminFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-208">
+            <state relative-caret-position="120">
               <caret line="14" column="124" selection-start-line="14" selection-start-column="124" selection-end-line="14" selection-end-column="124" />
             </state>
           </provider>
@@ -241,11 +241,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="43" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="42" />
     <option name="y" value="217" />
     <option name="width" value="1995" />
-    <option name="height" value="1617" />
+    <option name="height" value="1619" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -518,12 +518,12 @@
       <workItem from="1571668858077" duration="12000" />
       <workItem from="1571668884643" duration="400000" />
       <workItem from="1571671881441" duration="51000" />
-      <workItem from="1571671945883" duration="8616000" />
+      <workItem from="1571671945883" duration="9023000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70204000" />
+    <option name="totallyTimeSpent" value="70611000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -536,6 +536,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2208" height="1208" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5004651" side_tool="true" weight="0.32929105" />
@@ -550,7 +551,7 @@
       <window_info id="Structure" order="1" sideWeight="0.4054054" side_tool="true" weight="0.15581395" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.34701493" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.34701493" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49953488" weight="0.32929105" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32929105" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -558,9 +559,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" sideWeight="0.49953488" weight="0.32929105" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49860466" weight="0.37873134" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49860466" weight="0.19589552" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5928571" visible="true" weight="0.15581395" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5928571" visible="true" weight="0.15581395" />
       <window_info id="Web" order="2" sideWeight="0.40714285" side_tool="true" weight="0.15581395" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32929105" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -863,13 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/AdminFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-208">
-          <caret line="14" column="124" selection-start-line="14" selection-start-column="124" selection-end-line="14" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/LoginFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
@@ -913,11 +907,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/UserPageServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="440">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/AdminFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="124" selection-start-line="14" selection-start-column="124" selection-end-line="14" selection-end-column="124" />
         </state>
       </provider>
     </entry>

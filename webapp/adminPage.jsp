@@ -52,6 +52,9 @@
             </table>
 </form>
 
+<p><a href="/user">To user page</a></p>
+
+
 <br>
 
 <p><a href="/logout">LogOut</a></p>

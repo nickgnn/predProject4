@@ -20,6 +20,9 @@
 
 <%--<br>--%>
 
+<p><a href="/admin">To admin page</a></p>
+
+
 <p><a href="/logout">LogOut</a></p>
 
 <%--<br>--%>
