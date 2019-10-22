@@ -6,8 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 import service.Service;
 import service.UserService;
 
-import java.io.IOException;
-
 public class AuthManager {
     private static Service service = UserService.getInstance();
 
@@ -65,17 +63,4 @@ public class AuthManager {
 
         return password.equals(user.getPassword());
     }
-
-    public void doLogIn() throws DBException, IOException {
-        if (StringUtils.isEmpty(name) || StringUtils.isEmpty(password)) {
-            isLogged = false;
-            return;
-        }
-
-        isLogged = isLogin(name, password);
-
-
-        System.out.println(isLogged);
-    }
-
 }
