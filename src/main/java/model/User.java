@@ -6,7 +6,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "users", schema = "db_example")
 public class User {
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
