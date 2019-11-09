@@ -52,6 +52,7 @@ public class Main {
 //        service.cleanUp();
 //        service.createTable();
 
+
         service.addUser("admin", 31, "1", "admin");
         service.addUser("nick", 18, "1", "user");
         service.addUser("dick", 28, "1", "user");
@@ -97,5 +98,6 @@ public class Main {
 
 
 
+        System.out.println("USER ID BY NAME IS " + service.getUserIdByName("kick"));
     }
 }

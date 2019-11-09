@@ -91,14 +91,19 @@ public class UserDaoByHibernate implements UserDao {
 
     @Override
     public long getUserIdByName(String name) throws SQLException {
-        long id = 0;
-        User user = getUserByName(name);
+        long id;
 
-        if (user == null) {
-            return id;
-        } else {
-            id = user.getId();
-        }
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "SELECT U.id FROM User U WHERE U.name = :userName";
+        Query query = session.createQuery(hql);
+        query.setParameter("userName", name);
+        List results = query.list();
+
+        id = (long) results.get(0);
+
+        transaction.commit();
+        session.close();
 
         return id;
     }
